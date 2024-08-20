@@ -1,27 +1,29 @@
+import { useState } from 'react';
 import ArrowIcon from '../assets/arrow.svg';
 
-function CollabsibleCareerSection({role, location, content}) {
+function CollabsibleCareerSection({title, content, defaultCollapse}) {
+    const [collapsed, setCollapsed] = useState(typeof defaultCollapse !== 'undefined' ? defaultCollapse : true);
+    
     function toggleCollpase() {
-        event.target.parentElement.parentElement.classList.toggle('collpased');
+        setCollapsed(!collapsed);
     }
 
     function Arrow() {
-        return <img onClick={toggleCollpase} src={ArrowIcon} className='xp-section-toggle'/> ;
+        return <img onClick={toggleCollpase} src={ArrowIcon} className={`xp-section-toggle ${collapsed ? 'collapsed' : ''}`}/>;
     }
 
     return (
         <>
-            <div  className='career-section-container'>
+            <div className={`career-section-container  ${collapsed ? 'collapsed' : ''}`}>
                  {/* Icon by icon king1 on freeicons.io https://freeicons.io/undefined/arrow-arrow%20down-down-drop-stroke%20arrow-icon-706 */}
-                <h3 className="job-title-section">{role} at {location} <Arrow /></h3>
+                <h3 className="job-title-section">{title} <Arrow /></h3>
                 <div className="xp-wrapper">{content}</div>
             </div>
         </>
     );
-  }
-  
+}
 
-function ExperiencePage() {
+function RoleSection() {
     const experience = [];
 
     const kadroContent = 
@@ -43,7 +45,7 @@ function ExperiencePage() {
                 </ul>
             </>
         );
-    experience.push(<CollabsibleCareerSection role="Senior Software Engineer" location="Kadro Solutions Inc." content={kadroContent} />);
+    experience.push(<CollabsibleCareerSection title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
     
     const bcbsncContent = 
         (
@@ -56,7 +58,7 @@ function ExperiencePage() {
                 </ul>
             </>
         );
-    experience.push(<CollabsibleCareerSection role="IT Service Delivery Intern" location="Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
+    experience.push(<CollabsibleCareerSection title="IT Service Delivery Intern at Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
     
     const simpleAuctionSiteContent = 
         (
@@ -69,13 +71,66 @@ function ExperiencePage() {
             </>
         );
 
-    experience.push(<CollabsibleCareerSection role="Programming Intern" location="Simple Auction Site" content={simpleAuctionSiteContent} />);
+    experience.push(<CollabsibleCareerSection title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
     
+    return <CollabsibleCareerSection title="Roles" content={experience} defaultCollapse={false} />
+}
 
+function TechnologiesSection() {
+    const areas = [];
+
+    const backendContent = (
+        <>
+            <ul className='work-xp'>
+                <li>PHP</li>
+                <li>MySQL</li>
+                <li>C#</li>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </>
+    );
+
+    areas.push(<CollabsibleCareerSection title="Backend" content={backendContent}/>);
+
+    const frontendContent = (
+        <>
+            <ul className='work-xp'>
+                <li>JavaScript</li>
+                <li>AlpineJS</li>
+                <li>KnockoutJS</li>
+                <li>LESS</li>
+                <li>TailwindCSS</li>
+                <li>HTML</li>
+            </ul>
+        </>
+    );
+
+    areas.push(<CollabsibleCareerSection title="Frontend" content={frontendContent}/>);
+
+    const envContent = (
+        <>
+            <ul className='work-exp'>
+                <li>Linux</li>
+                <li>Adobe Cloud</li>
+                <li>Docker</li>
+                <li>WSL</li>
+            </ul>
+        </>
+    );
+
+    areas.push(<CollabsibleCareerSection title="Environments" content={envContent}/>);
+
+    return <CollabsibleCareerSection title="Technologies" content={areas} defaultCollapse={false} />
+
+}
+
+function ExperiencePage() {
     return (
       <>
-        <div className="main-content home">
-            {experience}
+        <div className="main-content experience">
+            <RoleSection />
+            <TechnologiesSection />
         </div>
       </>
       );
