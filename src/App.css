@@ -162,7 +162,7 @@
   list-style: square;
 }
 
-.career-section-container.collpased > div {
+.career-section-container.collapsed > div {
   display: none;
 }
 
@@ -173,7 +173,7 @@
   transition: transform 0.25s ease;
 }
 
-.career-section-container.collpased .xp-section-toggle {
+.career-section-container.collapsed .xp-section-toggle {
   transform: rotate(180deg);
   transition: transform 0.25s ease;
 }
