@@ -97,6 +97,7 @@ function TechnologiesSection() {
         <>
             <ul className='work-xp'>
                 <li>JavaScript</li>
+                <li>ReactJS + Vite</li>
                 <li>AlpineJS</li>
                 <li>KnockoutJS</li>
                 <li>LESS</li>
