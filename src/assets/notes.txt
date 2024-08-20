@@ -1,0 +1,10 @@
+
+
+structure
+
+Site
+    toolbar
+    if home homepage
+    if experience Experience
+    if contact Contact/Socials
+
