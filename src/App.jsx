@@ -53,9 +53,9 @@ function App() {
 }
 
 function getActivePage(activeSection) {
-  if(activeSection == HOME_PAGE) return <HomePage/>;
+  if(activeSection == HOME_PAGE) return <HomePage />;
   if(activeSection == EXPERIENCE_PAGE) return <ExperiencePage/>;
-  if(activeSection == TESTIMONIALS_PAGE) return <TestimonialPage/>;
+  if(activeSection == TESTIMONIALS_PAGE) return <TestimonialPage />;
 }
 
 export default App
