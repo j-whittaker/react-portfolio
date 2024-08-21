@@ -1,27 +1,4 @@
-import { useState } from 'react';
-import ArrowIcon from '../assets/arrow.svg';
-
-function CollabsibleCareerSection({title, content, defaultCollapse}) {
-    const [collapsed, setCollapsed] = useState(typeof defaultCollapse !== 'undefined' ? defaultCollapse : true);
-    
-    function toggleCollpase() {
-        setCollapsed(!collapsed);
-    }
-
-    function Arrow() {
-        return <img onClick={toggleCollpase} src={ArrowIcon} className={`xp-section-toggle ${collapsed ? 'collapsed' : ''}`}/>;
-    }
-
-    return (
-        <>
-            <div className={`career-section-container  ${collapsed ? 'collapsed' : ''}`}>
-                 {/* Icon by icon king1 on freeicons.io https://freeicons.io/undefined/arrow-arrow%20down-down-drop-stroke%20arrow-icon-706 */}
-                <h3 className="job-title-section">{title} <Arrow /></h3>
-                <div className="xp-wrapper">{content}</div>
-            </div>
-        </>
-    );
-}
+import CollapsibleSection from "../components/CollapsibleSection";
 
 function RoleSection() {
     const experience = [];
@@ -45,7 +22,7 @@ function RoleSection() {
                 </ul>
             </>
         );
-    experience.push(<CollabsibleCareerSection title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
+    experience.push(<CollapsibleSection key="kadro" title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
     
     const bcbsncContent = 
         (
@@ -58,7 +35,7 @@ function RoleSection() {
                 </ul>
             </>
         );
-    experience.push(<CollabsibleCareerSection title="IT Service Delivery Intern at Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
+    experience.push(<CollapsibleSection key="bcbsnc" title="IT Service Delivery Intern at Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
     
     const simpleAuctionSiteContent = 
         (
@@ -71,9 +48,9 @@ function RoleSection() {
             </>
         );
 
-    experience.push(<CollabsibleCareerSection title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
+    experience.push(<CollapsibleSection key="simpleaucsite" title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
     
-    return <CollabsibleCareerSection title="Roles" content={experience} defaultCollapse={false} />
+    return <CollapsibleSection title="Roles" content={experience} defaultCollapse={false} />
 }
 
 function TechnologiesSection() {
@@ -91,7 +68,7 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollabsibleCareerSection title="Backend" content={backendContent}/>);
+    areas.push(<CollapsibleSection key="backend" title="Backend" content={backendContent}/>);
 
     const frontendContent = (
         <>
@@ -107,7 +84,7 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollabsibleCareerSection title="Frontend" content={frontendContent}/>);
+    areas.push(<CollapsibleSection key="frontend" title="Frontend" content={frontendContent}/>);
 
     const envContent = (
         <>
@@ -120,9 +97,9 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollabsibleCareerSection title="Environments" content={envContent}/>);
+    areas.push(<CollapsibleSection key="environments" title="Environments" content={envContent}/>);
 
-    return <CollabsibleCareerSection title="Technologies" content={areas} defaultCollapse={false} />
+    return <CollapsibleSection title="Technologies" content={areas} defaultCollapse={false} />
 
 }
 
