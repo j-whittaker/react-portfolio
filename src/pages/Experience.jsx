@@ -103,15 +103,11 @@ function TechnologiesSection() {
 
 }
 
-function ExperiencePage() {
+export default function ExperiencePage() {
     return (
-      <>
         <div className="main-content experience">
             <RoleSection />
             <TechnologiesSection />
         </div>
-      </>
       );
   }
-
-  export default ExperiencePage
