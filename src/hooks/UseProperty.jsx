@@ -5,7 +5,7 @@ import { useRef } from "react";
  * @param {*} initial 
  * @returns 
  */
-function useProperty(initial = null) {
+export default function useProperty(initial = null) {
     const prop = useRef(initial);
     const setPropValue = (newVal) => {
       prop.current = newVal;
@@ -13,5 +13,3 @@ function useProperty(initial = null) {
   
     return [prop.current, setPropValue];
 }
-
-export default useProperty

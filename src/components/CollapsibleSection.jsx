@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import ArrowIcon from '../assets/arrow.svg';
 
-function CollapsibleSection({title, content, defaultCollapse}) {
-    const [collapsed, setCollapsed] = useState(typeof defaultCollapse !== 'undefined' ? defaultCollapse : true);
+
+export default function CollapsibleSection({title, content, defaultCollapse = true}) {
+    const [collapsed, setCollapsed] = useState(defaultCollapse);
     
     function toggleCollpase() {
         setCollapsed(!collapsed);
@@ -22,5 +23,3 @@ function CollapsibleSection({title, content, defaultCollapse}) {
         </>
     );
 }
-
-export default CollapsibleSection

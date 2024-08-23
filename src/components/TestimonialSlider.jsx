@@ -15,11 +15,11 @@ function TestimonialSlide({quote, author, active }) {
 }
 
 // added for code neatness, when passing in large string bodies
-function buildSlide(quote, author, active) {
+export function buildSlide(quote, author, active) {
   return <TestimonialSlide key={author} quote={quote} author={author} active={active}/>
 }
 
-function TestimonialSlider() {
+export default function TestimonialSlider() {
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
   const [intervalId, setIntervalId] = useProperty();
 
@@ -59,5 +59,3 @@ function TestimonialSlider() {
     );
 
 }
-
-export default TestimonialSlider

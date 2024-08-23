@@ -1,8 +1,7 @@
 import ContactWidget from "../components/ContactWidget";
 
-function HomePage() {
+export default function HomePage() {
     return (
-      <>
         <div className="main-content home">
           <div className="content-wrapper two-col">
             <div className="image-wrapper">
@@ -10,16 +9,12 @@ function HomePage() {
             </div>
             <div className="objective-wrapper">
                 <strong>OBJECTIVE</strong> 
-                <span>Looking to join a company with a customer focused, collaborative environment, 
-                  where I can utilize my problem solving skills to build and maintain excellent software that surpasses our 
-                  clients expectations.
+                <span>I'm looking to apply my problem solving skills to build and maintain excellent software that exceeds expectations. 
+                  I have fullstack experience and a passion for building software that addresses real world problems.
                 </span>
             </div>
           </div>
           <ContactWidget />
         </div>
-      </>
       );
   }
-
-  export default HomePage
