@@ -5,6 +5,7 @@ import TestimonialPage from './pages/Testimonials'
 import Toolbar from './components/Toolbar'
 import { HOME_PAGE, TESTIMONIALS_PAGE, EXPERIENCE_PAGE, PAGE_LIST } from './constants/PageConstants'
 import './App.css'
+import './styles/Header.css'
 
 
 function getSectionHash() {
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       <div className="page-header">
-        <h1 className='title'>Jacob Whittaker: Senior Software Engineer</h1>
+        <h1><span className="title">Jacob Whittaker</span><span className='seperator'></span>Senior Software Engineer</h1>
         <Toolbar activeSection={activeSection} setActiveSection={setActiveSection}/>
       </div>
       {activePage}
