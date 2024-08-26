@@ -1,0 +1,9 @@
+.contact-widget div{
+    margin-bottom: 1rem;
+    font-family: 'Roboto Mono';
+}
+
+.contact-widget a {
+    color: #000;
+    text-decoration: underline;
+}

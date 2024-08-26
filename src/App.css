@@ -27,7 +27,7 @@
 }
 
 .main-content {
-  background-image: radial-gradient(ellipse at 100% 100%, #EFF5F6 15%, #83a79a 70%);
+  /* background-image: radial-gradient(ellipse at 100% 100%, #EFF5F6 15%, #83a79a 70%); */
   height: 100%;
   overflow: auto;
   padding: 2rem 4rem;
@@ -37,24 +37,32 @@
   text-align: center;
 }
 
-.image-wrapper .profile-img {
-  width: 50%;
-  box-shadow: 10px 10px 15px #83a79a;
-  filter: brightness(0.95);
-}
-
 .content-wrapper {
   height: auto;
   display: flex;
   margin: 1rem auto;
-  padding: 1rem;
+  padding: 1rem 0;
   flex-direction: column;
   align-items: center;
+  text-align: left;
+  font-family: 'Roboto Mono';
+  font-size: 1rem;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
 }
 
 .content-wrapper.two-col {
   justify-content: space-between;
   flex-direction: row;
+}
+
+.content-wrapper.two-col .lg-col {
+  flex-basis: 60%;
+}
+
+.content-wrapper.two-col .sm-col {
+  flex-basis: 40%;
 }
 
 .content-wrapper div {
