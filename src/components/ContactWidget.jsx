@@ -1,4 +1,4 @@
-import '../styles/Contact.css'
+import '../styles/components/Contact.css'
 
 export default function ContactWidget() {
     return (

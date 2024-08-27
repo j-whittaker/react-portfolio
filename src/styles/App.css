@@ -118,33 +118,6 @@
   background-color: #a79a83;
 }
 
-.work-xp {
-  list-style: square;
-}
-
-.career-section-container.collapsed > div {
-  display: none;
-}
-
-.xp-section-toggle {
-  height: 1rem;
-  width: 1rem;
-  transform: rotate(0deg);
-  transition: transform 0.25s ease;
-}
-
-.career-section-container.collapsed .xp-section-toggle {
-  transform: rotate(180deg);
-  transition: transform 0.25s ease;
-}
-
-.job-title-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-}
-
 .seperator::before {
   content: '|';
   font-weight: 500;

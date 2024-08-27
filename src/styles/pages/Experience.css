@@ -1,0 +1,11 @@
+.exp-page .title {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #707070;
+}
+
+.exp-page .collapse-content-wrapper {
+    font-family: 'Roboto Mono', sans-serif;
+    color: #707070;
+}

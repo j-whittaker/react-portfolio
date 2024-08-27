@@ -1,4 +1,5 @@
 import CollapsibleSection from "../components/CollapsibleSection";
+import '../styles/pages/Experience.css'
 
 function RoleSection() {
     const experience = [];
@@ -22,7 +23,7 @@ function RoleSection() {
                 </ul>
             </>
         );
-    experience.push(<CollapsibleSection key="kadro" title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
+    experience.push(<CollapsibleSection key="kadro" additionalClasses="exp-page" title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
     
     const bcbsncContent = 
         (
@@ -35,7 +36,7 @@ function RoleSection() {
                 </ul>
             </>
         );
-    experience.push(<CollapsibleSection key="bcbsnc" title="IT Service Delivery Intern at Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
+    experience.push(<CollapsibleSection key="bcbsnc" additionalClasses="exp-page" title="IT Service Delivery Intern at Blue Cross and Blue Shield of NC" content={bcbsncContent} />);
     
     const simpleAuctionSiteContent = 
         (
@@ -48,9 +49,15 @@ function RoleSection() {
             </>
         );
 
-    experience.push(<CollapsibleSection key="simpleaucsite" title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
+    experience.push(<CollapsibleSection key="simpleaucsite" additionalClasses="exp-page" title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
     
-    return <CollapsibleSection title="Roles" content={experience} defaultCollapse={false} />
+    return (
+    <>
+        <h2>Experience</h2>
+        <div className="experience-wrapper">
+            {experience}
+        </div>
+    </>);
 }
 
 function TechnologiesSection() {
@@ -68,7 +75,7 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollapsibleSection key="backend" title="Backend" content={backendContent}/>);
+    areas.push(<CollapsibleSection key="backend" additionalClasses="exp-page" title="Backend" content={backendContent}/>);
 
     const frontendContent = (
         <>
@@ -84,7 +91,7 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollapsibleSection key="frontend" title="Frontend" content={frontendContent}/>);
+    areas.push(<CollapsibleSection key="frontend" additionalClasses="exp-page" title="Frontend" content={frontendContent}/>);
 
     const envContent = (
         <>
@@ -97,9 +104,15 @@ function TechnologiesSection() {
         </>
     );
 
-    areas.push(<CollapsibleSection key="environments" title="Environments" content={envContent}/>);
+    areas.push(<CollapsibleSection key="environments" additionalClasses="exp-page" title="Environments" content={envContent}/>);
 
-    return <CollapsibleSection title="Technologies" content={areas} defaultCollapse={false} />
+    return (
+        <>
+            <h2>Technologies</h2>
+            <div className="experience-wrapper">
+                {areas}
+            </div>
+        </>);
 
 }
 

@@ -4,7 +4,7 @@ import ExperiencePage from './pages/Experience'
 import TestimonialPage from './pages/Testimonials'
 import Toolbar from './components/Toolbar'
 import { HOME_PAGE, TESTIMONIALS_PAGE, EXPERIENCE_PAGE, PAGE_LIST } from './constants/PageConstants'
-import './App.css'
+import './styles/App.css'
 import './styles/Header.css'
 
 

@@ -1,6 +1,6 @@
 import ContactWidget from "../components/ContactWidget";
 import { HOME_PAGE } from "../constants/PageConstants";
-import '../styles/Home.css'
+import '../styles/pages/Home.css'
 
 export default function HomePage() {
     return (
