@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import useProperty from '../hooks/UseProperty';
+import '../styles/components/TestimonialSlider.css';
+import SideArrow from '../assets/side-arrow.svg';
 
 function SlideBtn({setActiveSlide, active }) {
   return <span onClick={setActiveSlide} className={`slide-btn ${active}`}></span>;
@@ -23,10 +25,20 @@ export default function TestimonialSlider() {
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
   const [intervalId, setIntervalId] = useProperty();
 
+  const prevSlide = useCallback(() => {
+    if(intervalId) clearInterval(intervalId);
+    setActiveSlideIdx(prevActiveSlideIdx => ((prevActiveSlideIdx - 1 >= 0) ? prevActiveSlideIdx - 1 : 2));
+  }, [intervalId]);
+
+  const nextSlide = useCallback(() => {
+    if(intervalId) clearInterval(intervalId);
+    setActiveSlideIdx(prevActiveSlideIdx => (prevActiveSlideIdx + 1) % 3);
+  }, [intervalId]);
+
   useEffect(() => {
 
     const intervalId = setInterval(() => {
-      setActiveSlideIdx(prevActiveSlideIdx => (prevActiveSlideIdx + 1) % 3);
+      nextSlide();
     }, 2750);
 
     setIntervalId(intervalId);
@@ -34,6 +46,8 @@ export default function TestimonialSlider() {
     return () => clearInterval(intervalId);
 
   }, []);
+
+  
 
   function setActiveSlideClick(idx, intervalId) {
     if(intervalId) clearInterval(intervalId);
@@ -52,10 +66,10 @@ export default function TestimonialSlider() {
   return (
       <>
         <div className='testimonial-slider'>
-          <div className='slides'>{slides}</div>
-          <div className='slide-btns'>{slideBtns}</div>
+          <button onClick={prevSlide} className='testimonial-arrow prev'><img src={SideArrow}></img></button>
+          <div className='slides'>{slides}<div className='slide-btns'>{slideBtns}</div></div>
+          <button onClick={nextSlide} className='testimonial-arrow next'><img src={SideArrow}></img></button>
         </div>
       </>
     );
-
 }

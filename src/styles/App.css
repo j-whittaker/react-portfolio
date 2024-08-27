@@ -1,0 +1,85 @@
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.main-content {
+  /* background-image: radial-gradient(ellipse at 100% 100%, #EFF5F6 15%, #83a79a 70%); */
+  height: 100%;
+  overflow: auto;
+  padding: 2rem 4rem;
+}
+
+.image-wrapper {
+  text-align: center;
+}
+
+.content-wrapper {
+  height: auto;
+  display: flex;
+  margin: 1rem auto;
+  padding: 1rem 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  font-family: 'Roboto Mono';
+  font-size: 1rem;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 1;
+}
+
+.content-wrapper.two-col {
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.content-wrapper.two-col .lg-col {
+  flex-basis: 60%;
+}
+
+.content-wrapper.two-col .sm-col {
+  flex-basis: 40%;
+}
+
+.content-wrapper div {
+  flex-basis: 100%;
+}
+
+.content-wrapper.two-col div {
+  flex-basis: 50%;
+}
+
+.content-wrapper div {
+  margin: auto;
+}
+
+.seperator::before {
+  content: '|';
+  font-weight: 500;
+  padding: 0 0.75rem;
+  color: #fff;
+}

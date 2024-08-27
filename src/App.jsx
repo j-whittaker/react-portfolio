@@ -4,11 +4,12 @@ import ExperiencePage from './pages/Experience'
 import TestimonialPage from './pages/Testimonials'
 import Toolbar from './components/Toolbar'
 import { HOME_PAGE, TESTIMONIALS_PAGE, EXPERIENCE_PAGE, PAGE_LIST } from './constants/PageConstants'
-import './App.css'
+import './styles/App.css'
+import './styles/Header.css'
 
 
 function getSectionHash() {
-  let hash = window.location.hash.replace('#', '');
+  let hash = decodeURIComponent(window.location.hash.replace('#', ''));
   if(!PAGE_LIST.includes(hash)) {
     hash = ''; 
   }
@@ -23,14 +24,14 @@ function setSectionHash(hash) {
 
 function App() {
   const currentSection = getSectionHash();
-  const [activeSection, setActiveSection] = useState(currentSection !== '' ? currentSection : 'home');
+  const [activeSection, setActiveSection] = useState(currentSection !== '' ? currentSection : HOME_PAGE);
   const activePage = getActivePage(activeSection);
   setSectionHash(activeSection);
 
   return (
     <>
       <div className="page-header">
-        <h1 className='title'>Jacob Whittaker: Senior Software Engineer</h1>
+        <h1><span className="title">Jacob Whittaker</span><span className='seperator'></span>Senior Software Engineer</h1>
         <Toolbar activeSection={activeSection} setActiveSection={setActiveSection}/>
       </div>
       {activePage}
