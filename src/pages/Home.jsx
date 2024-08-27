@@ -17,7 +17,6 @@ export default function HomePage() {
               <img src="/ProfilePicture.png" className="profile-img" alt="Profile Picture"></img>
             </div>
           </div>
-          
         </div>
       );
   }

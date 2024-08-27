@@ -9,7 +9,7 @@ import './styles/Header.css'
 
 
 function getSectionHash() {
-  let hash = window.location.hash.replace('#', '');
+  let hash = decodeURIComponent(window.location.hash.replace('#', ''));
   if(!PAGE_LIST.includes(hash)) {
     hash = ''; 
   }
@@ -24,7 +24,7 @@ function setSectionHash(hash) {
 
 function App() {
   const currentSection = getSectionHash();
-  const [activeSection, setActiveSection] = useState(currentSection !== '' ? currentSection : 'home');
+  const [activeSection, setActiveSection] = useState(currentSection !== '' ? currentSection : HOME_PAGE);
   const activePage = getActivePage(activeSection);
   setSectionHash(activeSection);
 
