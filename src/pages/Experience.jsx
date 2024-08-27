@@ -51,13 +51,7 @@ function RoleSection() {
 
     experience.push(<CollapsibleSection key="simpleaucsite" additionalClasses="exp-page" title="Programming Intern at Simple Auction Site" content={simpleAuctionSiteContent} />);
     
-    return (
-    <>
-        <h2>Experience</h2>
-        <div className="experience-wrapper">
-            {experience}
-        </div>
-    </>);
+    return <div className="exp-section"><h2>Experience</h2><div className="experience-wrapper">{experience}</div></div>;
 }
 
 function TechnologiesSection() {
@@ -106,14 +100,7 @@ function TechnologiesSection() {
 
     areas.push(<CollapsibleSection key="environments" additionalClasses="exp-page" title="Environments" content={envContent}/>);
 
-    return (
-        <>
-            <h2>Technologies</h2>
-            <div className="experience-wrapper">
-                {areas}
-            </div>
-        </>);
-
+    return <div className="exp-section"><h2>Technologies</h2><div className="experience-wrapper">{areas}</div></div>;
 }
 
 export default function ExperiencePage() {

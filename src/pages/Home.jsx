@@ -9,7 +9,7 @@ export default function HomePage() {
           <div className="content-wrapper two-col">
           <div className="lg-col">
                 <span className="objective">I'm looking to apply my problem solving skills to build and maintain excellent software that exceeds expectations. 
-                  I have full stack experience a passion for building solutions that addresses real world problems.
+                  I have full stack experience and a passion for building solutions that addresses real world problems.
                 </span>
                 <ContactWidget />
             </div>
