@@ -1,7 +1,11 @@
 import CollapsibleSection from "../components/CollapsibleSection";
+import Title from '../components/Title'
+import useMediaCheck from '../hooks/UseMediaCheck'
 import '../styles/pages/Experience.css'
 
 function RoleSection() {
+    const expandFirst = useMediaCheck('(max-width: 767px)');
+
     const experience = [];
 
     const kadroContent = 
@@ -23,7 +27,7 @@ function RoleSection() {
                 </ul>
             </>
         );
-    experience.push(<CollapsibleSection key="kadro" additionalClasses="exp-page" title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} />);
+    experience.push(<CollapsibleSection key="kadro" additionalClasses="exp-page" title="Senior Software Engineer at Kadro Solutions Inc." content={kadroContent} defaultCollapse={!expandFirst}/>);
     
     const bcbsncContent = 
         (
@@ -104,8 +108,11 @@ function TechnologiesSection() {
 }
 
 export default function ExperiencePage() {
+    const showTitle = useMediaCheck('(max-width: 768px)');
+
     return (
         <div className="main-content experience">
+            {showTitle && <Title/>} 
             <RoleSection />
             <TechnologiesSection />
         </div>

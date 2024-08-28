@@ -74,3 +74,18 @@
 .testimonial-arrow:focus-visible {
     outline: none;
 }
+
+@media screen and (max-width: 767px) {
+
+    div.testimonial-slide {
+        min-height: 25rem;
+    }
+}
+
+@media screen and (max-width: 481px) {
+
+    div.testimonial-slide {
+        min-height: 30rem;
+        padding: 1rem;
+    }
+}

@@ -6,3 +6,9 @@
     margin-bottom: 2rem;
     display: inline-block;
 }
+
+@media screen and (max-width: 481px) {
+    .home .content-wrapper.two-col {
+      flex-direction: column-reverse;
+    }
+}
