@@ -1,10 +1,15 @@
 import ContactWidget from "../components/ContactWidget";
+import Title from '../components/Title'
 import { HOME_PAGE } from "../constants/PageConstants";
+import useMediaCheck from '../hooks/UseMediaCheck'
 import '../styles/pages/Home.css'
 
 export default function HomePage() {
-    return (
+  const showTitle = useMediaCheck('(max-width: 768px)');
+
+  return (
         <div className="main-content home">
+          {showTitle && <Title/>} 
           <h2>{HOME_PAGE}</h2>
           <div className="content-wrapper two-col">
           <div className="lg-col">
