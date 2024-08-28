@@ -83,3 +83,9 @@
   padding: 0 0.75rem;
   color: #fff;
 }
+
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
